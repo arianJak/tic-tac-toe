@@ -1,11 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .game {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(45deg, #3A4773, #bebebe);
+  background: linear-gradient(45deg, #bebebe, #3A4773);
   height: 100vh;
-  
+
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  .theme-toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    margin: 20px;
+    margin-right: -75vw;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &__circle {
+      width: 26px;
+      height: 26px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+  }
 
   &--dark {
     background: linear-gradient(45deg, #1e1e1e, #3a3a3a);
@@ -42,30 +70,9 @@
     }
   }
 
-  .theme-toggle {
-    width: 60px;
-    height: 30px;
-    background-color: #ccc;
-    border-radius: 15px;
-    margin: 20px;
-    cursor: pointer;
-    position: relative;
-    transition: background-color 0.3s;
-
-    &__circle {
-      width: 26px;
-      height: 26px;
-      background-color: #fff;
-      border-radius: 50%;
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      transition: transform 0.3s, background-color 0.3s;
-    }
-  }
-
   &__title {
     font-size: 3rem;
+    margin-top: 0;
     margin-bottom: 1rem;
   }
 
