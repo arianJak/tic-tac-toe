@@ -1,0 +1,140 @@
+.game {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(45deg, #3A4773, #bebebe);
+  height: 100vh;
+  
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  &--dark {
+    background: linear-gradient(45deg, #1e1e1e, #3a3a3a);
+    color: #ffffff;
+
+    .theme-toggle {
+      background-color: #f1c40f;
+
+      &__circle {
+        transform: translateX(30px);
+        background-color: #2c3e50;
+      }
+    }
+
+    .game__reset-button {
+      color: white;
+    }
+
+
+    .game__cell {
+      background-color: #555555;
+      border-color: #777777;
+      color: #ffffff;
+    }
+
+    .game__cell--x {
+      background-color: #a83241;
+      color: #ffffff;
+    }
+
+    .game__cell--o {
+      background-color: #4a6aff;
+      color: #ffffff;
+    }
+  }
+
+  .theme-toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &__circle {
+      width: 26px;
+      height: 26px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__status {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+    &--game-over {
+      color: red;
+    }
+  }
+  
+  &__board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+  }
+
+  &__cell {
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 130px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    padding-bottom: 20px;
+
+    transition: color 0.3s, background-color 0.3s;
+    &:hover {
+      background-color: #e0e0e0;
+    }
+    
+    &--x {
+      background-color: #DE4169;
+      color: #000000;
+    }
+
+    &--o {
+      background-color: #819DFF;
+      color: #000000;
+    }
+
+  }
+  
+
+  &__reset-button {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #000000;
+    cursor: pointer;
+    background: linear-gradient(135deg, #DE4169, #819DFF);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 5px;
+
+
+    transition: background-position 0.5s ease-out;
+    &:hover {
+      background-position: right center;
+    }
+  }
+}
+
